@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Game - Beat the Competition!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1><i class="fas fa-trophy"></i> Clicker Challenge</h1>
+            <div class="stats">
+                <div class="stat-box">
+                    <span class="stat-label">Your Clicks</span>
+                    <span id="clickCount" class="stat-value">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">CPS</span>
+                    <span id="cps" class="stat-value">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Rank</span>
+                    <span id="rank" class="stat-value">#5</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Left: Your Game -->
+            <div class="player-section">
+                <div class="clicker-section">
+                    <div class="player-info">
+                        <div class="player-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>YOU</h3>
+                        <div class="player-stats">
+                            <p>Clicks: <span id="playerClicks">0</span></p>
+                            <p>Power: <span id="playerPower">1</span>x</p>
+                        </div>
+                    </div>
+                    
+                    <button id="clickButton" class="click-button">
+                        <div class="click-button-inner">
+                            <i class="fas fa-hand-pointer click-icon"></i>
+                            <span class="click-text">CLICK ME!</span>
+                        </div>
+                    </button>
+                    
+                    <div class="click-effects" id="clickEffects"></div>
+                    
+                    <div class="bonus-display">
+                        <div class="bonus-box" id="nextBonus">
+                            Next Bonus: <span>100</span> clicks ahead
+                        </div>
+                        <div class="bonus-box bonus-rewards">
+                            Total Bonuses: <span id="totalBonuses">0</span>
+                        </div>
+                    </div>
+                    <!-- ADD THIS NEW BUTTON -->
+                    <button id="githubButton" class="simple-github-btn">
+                        <i class="fab fa-github"></i> Don't press this actually
+                    </button>
+                </div>
+
+                <!-- Shop -->
+                <div class="shop-section">
+                    <h2><i class="fas fa-shopping-cart"></i> Upgrade Shop</h2>
+                    <div class="shop-items" id="shopItems">
+                        <!-- Items will be added by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Competitors -->
+            <div class="competitors-section">
+                <h2><i class="fas fa-users"></i> Competitors</h2>
+                <div class="leaderboard">
+                    <div class="leaderboard-header">
+                        <span>Rank</span>
+                        <span>Name</span>
+                        <span>Clicks</span>
+                        <span>CPS</span>
+                    </div>
+                    <div class="competitors-list" id="competitorsList">
+                        <!-- Competitors will be added by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="competition-info">
+                    <h3><i class="fas fa-flag-checkered"></i> Challenge</h3>
+                    <div class="challenge-box">
+                        <p>Current Target: <span id="currentTarget">Bot 1</span></p>
+                        <p>Ahead by: <span id="clicksAhead">0</span> clicks</p>
+                        <p>Reward: <span id="rewardAmount">50</span> clicks</p>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="progressBar"></div>
+                        </div>
+                        <p class="progress-text">0% to overtake</p>
+                    </div>
+                    
+                    <div class="achievements">
+                        <h3><i class="fas fa-medal"></i> Achievements</h3>
+                        <div class="achievement-list" id="achievementsList">
+                            <!-- Achievements will be added by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Controls -->
+        <footer class="controls">
+            <button id="resetButton" class="control-btn btn-reset">
+                <i class="fas fa-redo"></i> Reset Game
+            </button>
+            <button id="themeButton" class="control-btn btn-theme">
+                <i class="fas fa-moon"></i> Dark Mode
+            </button>
+            <button id="soundButton" class="control-btn btn-sound">
+                <i class="fas fa-volume-up"></i> Sound On
+            </button>
+            <button id="newCompetitorsButton" class="control-btn btn-competitors">
+                <i class="fas fa-random"></i> New Competitors
+            </button>
+        </footer>
+    </div>
+
+    <script src="javascript.js"></script>
+</body>
+</html>
